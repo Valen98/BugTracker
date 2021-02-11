@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import './Shared/Global/Styles/Global.css';
+
+
+import 'firebase/firestore'
+import 'firebase/auth'
+
+import BugTracker from './Component/BugTracker/BugTracker'
+import NavBar from './Component/NavBar/NavBar'
+import SignIn from './Component/SignIn/SignIn'
+
+import { useAuthState} from 'react-firebase-hooks/auth'
+
+
+import firebase from './Shared/Global/Proivder/Firebase'
+
+const auth = firebase.auth()
+
 
 function App() {
+  const [user] = useAuthState(auth);
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+          <NavBar />
       </header>
+
+      <section>
+        {user ? <BugTracker Sorter={"createdAt"}/> : <SignIn />}
+      </section>
     </div>
   );
 }
+
+
+
 
 export default App;

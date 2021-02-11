@@ -1,0 +1,37 @@
+.dummyDiv {
+    display: flex;
+    width: 100%;
+    position: sticky;
+    z-index: 3;
+}
+.NavBar {
+    height: 3vh;
+    position: fixed;
+    padding: 0.7rem 2rem;
+    overflow: hidden;
+    width: 100%; 
+    margin: auto;
+    background-color:#253692;
+    opacity: 1;
+    top: 0;
+}
+
+.signOut {
+    width: 5%;
+    position: absolute;
+    left:90%;
+    bottom: 20%;
+}
+
+.signOut button{
+    border-radius: 5px;
+    height: 3vh;
+    width: 100%;
+    background-color: white;
+    box-shadow: 1px 1px 5px ;
+}
+.NavBar h1 {
+    position: absolute;
+    bottom: 10%;
+    color:#fff;
+}

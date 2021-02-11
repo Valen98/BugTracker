@@ -1,0 +1,42 @@
+Deadlines i need to follow to complete the BugTracker
+TODOS
+
+Week: 4
+
+    Setup project and Firebase, Done
+    Google Login, Done
+    Create Issues  
+    Display Issues Done
+    mark as complete then be able to Delete issue
+
+    Must Do: Sort it in the correct order: Latest issue should be first or sort it by dueDate
+    
+    make it to components instead of one file
+
+    Simple Design
+    Materialize UI
+
+    Issues: 
+        CreatedAt: timeStamp
+        Who made it: String
+        Title of issue: String 
+        About the Issues: String
+        isComplete: boolean
+        When is it due: timeStamp
+    
+
+_____________________________________________
+Week: 5
+
+    Due Date need to be fixed
+    NavBar
+    Make it personal
+    Flir/tags
+    Make it RWD
+    Login "Page"
+
+_____________________________________________
+Week: 6
+
+    Personal page for your own Issues
+

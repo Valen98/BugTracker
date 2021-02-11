@@ -1,0 +1,111 @@
+.issueForm {
+    display: flex;
+    width: 100%;
+}
+
+form {
+    position: sticky;
+    left:5%;
+    top:10%;
+    width: 40%;
+    height: 35vh;
+    transform: translate(-10% -50%);
+    box-shadow: 2px 2px 5px 5px grey;
+}
+
+.issueTitle {
+    position: absolute;
+    top:10%;
+    left:5%;
+    width: 40%;
+}
+.textArea {
+    position: absolute;
+    top:30%;
+    left:5%;
+    height: 400px;
+    width: 38.8%;
+    padding: 10px 5px;
+    border:1px solid grey;
+}
+
+.submitButton {
+    position: absolute;
+    left:20%;
+    top:80%;
+}
+
+.datePicker {
+    position: absolute;
+    left:20%;
+    top:10%;
+
+}
+
+.sectionIssue{
+    display: flex;
+    position: relative;
+    left:10%;
+    width: 45%;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    z-index: 1;
+}
+
+.issue {
+    position: relative;
+    top:3%;
+    align-items: center;
+    padding: 10px 10px;
+    border: 1px solid grey;
+}
+.issue h1{
+    text-decoration: underline;
+}
+.imgDiv {
+    position: relative;
+    left:90%;
+    width: 10%;
+}
+
+.imgDiv img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.imgDiv p{
+    display: none;
+}
+.imgDiv img:hover + p{
+    display: unset;
+    position: absolute;
+    text-align: center;
+    top:10%;
+    padding: 5px;
+    box-shadow: 1px 1px 3px 3px grey;
+    background-color: white;
+}
+.checkboxCompleted {
+    position: relative;
+    left:81%;
+    width: 20%;
+}
+
+.removeIssue button {
+    background-color: white;
+    position: relative;
+    left:93%;
+}
+.removeIssue button :hover {
+    cursor: pointer;
+}
+.createdAt {
+    font-size: .8rem;
+    position: absolute;
+    top:1%;
+}
+.dueDate {
+    position: absolute;
+    top:85%;
+}

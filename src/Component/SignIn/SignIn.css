@@ -1,0 +1,38 @@
+.SignInCard {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-content: center;
+    min-height: 100%;
+    background-color: #363636;
+}
+
+.container {
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  box-shadow: 4px 4px 10px 1px;
+  width:450px;
+  display: flex;  
+  flex-direction: column;
+  height: 30vh;
+  align-self: center;
+}
+
+.container button{
+    width: 40%;
+    height: 5vh;
+    align-self: center;
+    margin: 10%;
+    background-color:#0428f6;
+    color: #fff;
+    font-size: 1rem;
+    border-radius: 5px;	
+}
+.container h1 { 
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 20px 20px 0;
+    margin:0;
+    
+}

@@ -1,0 +1,13 @@
+.sortButton {
+    position: relative;
+    top:2.5%;
+    width: 20%;
+    left: 80%;
+}
+.sortButton Button {
+    width: 100%;
+    left:0%;
+}
+.MuiPaper-root {
+    width: 9%;
+}
