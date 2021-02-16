@@ -8,7 +8,6 @@ import DeleteOutlinedIcon from '@material-ui/icons/DeleteOutlined';
 
 import './BugTracker.css'
 import SortBy from './SortBy'
-import Tags from '../Tags/Tags'
 
 import firebase from '../../Shared/Global/Proivder/Firebase'
 import 'firebase/firestore'
@@ -22,9 +21,8 @@ const firestore = firebase.firestore()
 const IssueRef = firestore.collection('issue')
 
 function BugTracker() {
-    const query = IssueRef.orderBy('createdAt').limit(25)
+    const query = IssueRef.orderBy('createdAt')
     const [issues] = useCollectionData(query, {idField: 'id'})
-  
 
     const [issueTitle, setIssueTitle ] = useState('')
   
@@ -71,7 +69,8 @@ function BugTracker() {
             InputLabelProps={{
               shrink: true,
             }}
-          />  
+          />
+            
           <Button
           variant="contained"
           color="primary"
@@ -93,7 +92,6 @@ function BugTracker() {
   
 function DisplayIssues(props) {
   let {issueTitle, id, photoURL, displayName, issueAbout, isCompleted, dueDate, createdAt} = props.issue
-
 
   const handleChecker = async (id) => {
     const BooleanComplete = !isCompleted

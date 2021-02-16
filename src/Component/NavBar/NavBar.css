@@ -35,3 +35,32 @@
     bottom: 10%;
     color:#fff;
 }
+
+.userHistory {
+    width: 5%;
+    position: absolute;
+    left:84%;
+    bottom: 20%;
+}
+
+.userHistory button {
+    border-radius: 5px;
+    height: 3vh;
+    width: 100%;
+    background-color: white;
+    box-shadow: 1px 1px 5px;
+}
+.homeHistory {
+    width: 5%;
+    position: absolute;
+    left:78%;
+    bottom: 20%;
+}
+
+.homeHistory button {
+    border-radius: 5px;
+    height: 3vh;
+    width: 100%;
+    background-color: white;
+    box-shadow: 1px 1px 5px;
+}
