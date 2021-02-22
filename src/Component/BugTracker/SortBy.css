@@ -1,13 +1,12 @@
 .sortButton {
-    position: relative;
-    top:2.5%;
-    width: 20%;
-    left: 80%;
+    position: sticky;
+    top:5.5%;
+    width: 10%;
+    left: 87%;
+    height: 5vh;
+    z-index: 2;
 }
 .sortButton Button {
-    width: 100%;
+    width: 80%;
     left:0%;
-}
-.MuiPaper-root {
-    width: 9%;
 }

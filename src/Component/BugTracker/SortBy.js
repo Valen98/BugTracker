@@ -5,7 +5,7 @@ import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import './SortBy.css'
-
+import BugTracker from './BugTracker'
 const StyledMenu = withStyles({
     paper: {
       border: '1px solid #d3d4d5',
@@ -40,7 +40,6 @@ const StyledMenu = withStyles({
 function SortBy() {
     const [anchorEl, setAnchorEl] = useState(null);
     const [orderBy, setOrderBy] = useState('createdAt')
-    sessionStorage.setItem('sorter', orderBy)
     const handleClick = (event) => {
       setAnchorEl(event.currentTarget);
     };
@@ -50,6 +49,7 @@ function SortBy() {
     };
     //TODO: FIX THE ORDERBY IN BugTracker.js
     return (
+      <div>
         <div className="sortButton">
           <Button
           aria-controls="customized-menu"
@@ -79,6 +79,8 @@ function SortBy() {
           </StyledMenuItem>
         </StyledMenu>
         </div>
+        <BugTracker sorter={orderBy}/>
+      </div>
 
     )
     

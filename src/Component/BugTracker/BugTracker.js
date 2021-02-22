@@ -7,7 +7,6 @@ import TextareaAutosize from '@material-ui/core/TextareaAutosize';
 import DeleteOutlinedIcon from '@material-ui/icons/DeleteOutlined';
 
 import './BugTracker.css'
-import SortBy from './SortBy'
 
 import firebase from '../../Shared/Global/Proivder/Firebase'
 import 'firebase/firestore'
@@ -20,8 +19,8 @@ const auth = firebase.auth()
 const firestore = firebase.firestore()
 const IssueRef = firestore.collection('issue')
 
-function BugTracker() {
-    const query = IssueRef.orderBy('createdAt')
+function BugTracker(sorter) {
+    const query = IssueRef.orderBy(sorter.sorter)
     const [issues] = useCollectionData(query, {idField: 'id'})
 
     const [issueTitle, setIssueTitle ] = useState('')
@@ -82,7 +81,6 @@ function BugTracker() {
         </Button>
         </form>
         <section className="sectionIssue">
-            <SortBy/>
 
           {issues && issues.map(iss => <DisplayIssues key={iss.id} issue={iss} />)}
         </section>
@@ -92,12 +90,12 @@ function BugTracker() {
   
 function DisplayIssues(props) {
   let {issueTitle, id, photoURL, displayName, issueAbout, isCompleted, dueDate, createdAt} = props.issue
-
   const handleChecker = async (id) => {
     const BooleanComplete = !isCompleted
     await IssueRef.doc(id).update({isCompleted: BooleanComplete})
     console.log(isCompleted)
   }
+  let today = new Date().getTime()
   let displayDueDate = new Date(dueDate.seconds * 1000).toLocaleDateString("se-SE")
   //let displayCreatedAt = Date(createdAt.seconds)
   let displayCreatedAt = new Date(createdAt.seconds * 1000).toLocaleDateString("se-SE")
@@ -105,6 +103,17 @@ function DisplayIssues(props) {
     if(window.confirm(`Are you sure you want to delete id: ${id}`)){
       await IssueRef.doc(id).delete() 
     }
+  }
+  //Removes miliseconds from the 
+  today = (today-(today%1000)) / 1000
+  let dateCounter = dueDate.seconds - today
+  
+  let dueDateColor = ''
+
+  if(dateCounter < 0 ){
+    dueDateColor = '#ff0000' 
+  }else {
+    dueDateColor = '#000000'
   }
 
   return(
@@ -116,7 +125,7 @@ function DisplayIssues(props) {
         <p className="createdAt">Created: {displayCreatedAt}</p>
         <h1>{issueTitle}</h1>
         <p>{issueAbout}</p>
-        <p className="dueDate">Due to: {displayDueDate}</p>
+        <p className="dueDate" style={{color:dueDateColor}}>Due to: {displayDueDate}</p>
         <div className="checkboxCompleted">
           Completed?<Checkbox 
           checked={isCompleted}

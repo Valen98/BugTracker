@@ -55,7 +55,7 @@ form {
 
 .issue {
     position: relative;
-    top:3%;
+    top:5%;
     align-items: center;
     padding: 10px 10px;
     border: 1px solid grey;
@@ -88,7 +88,7 @@ form {
 }
 .checkboxCompleted {
     position: relative;
-    left:81%;
+    left:82.5%;
     width: 20%;
 }
 
