@@ -141,7 +141,4 @@ function DisplayIssues(props) {
       </div>
   )
 }
-
-
-
-  export default BugTracker
+export default BugTracker
